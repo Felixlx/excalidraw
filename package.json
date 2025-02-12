@@ -52,7 +52,7 @@
   "scripts": {
     "build-node": "node ./scripts/build-node.js",
     "build:app:docker": "yarn --cwd ./excalidraw-app build:app:docker",
-    "build:app": "yarn --cwd ./excalidraw-app build:app",
+    "build:app": "cross-env VITE_APP_GIT_SHA=$(git rev-parse HEAD) vite build && cp -r build dist",
     "build:version": "yarn --cwd ./excalidraw-app build:version",
     "build": "yarn --cwd ./excalidraw-app build",
     "build:preview": "yarn --cwd ./excalidraw-app build:preview",
